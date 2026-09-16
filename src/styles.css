@@ -184,6 +184,35 @@ h1, h2, h3, p { text-wrap: pretty; }
 .editorial-list--numbered { padding-left: 1.6rem; }
 .editorial-list--numbered li::marker { font-weight: 900; color: var(--yellow); }
 .story-page--light .editorial-list--numbered li::marker { color: var(--yellow); text-shadow: 0 0 0 #111; }
+
+.editorial-list--numbered-cards {
+  list-style: none;
+  counter-reset: risk-card-counter;
+  padding-left: 0;
+  margin-top: 18px;
+}
+
+.editorial-list--numbered-cards li {
+  counter-increment: risk-card-counter;
+  position: relative;
+  margin: 0 0 14px;
+  padding: 16px 18px 16px 58px;
+  background: rgba(255, 220, 0, 0.28);
+  border-radius: 18px;
+}
+
+.editorial-list--numbered-cards li::before {
+  content: counter(risk-card-counter) ".";
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  color: #111;
+  font-weight: 900;
+}
+
+.story-page--light .editorial-list--numbered-cards li {
+  background: rgba(255, 220, 0, 0.35);
+}
 .editorial-quote { margin: 25px 0 0; padding: 16px 20px; border-left: 4px solid var(--yellow); background: rgba(255,255,255,.08); font-size: clamp(1rem,1.35vw,1.15rem); font-weight: 700; line-height: 1.45; }
 .story-page--light .editorial-quote { background: rgba(17,17,17,.055); }
 .text-block + .text-block { margin-top: 21px; padding-top: 4px; border-top: 1px solid currentColor; border-color: rgba(128,128,128,.28); }
@@ -1815,6 +1844,7 @@ button.secondary-cta {
   color: #111;
   font-weight: 900;
   font-size: 1.25rem;
+  border-radius: 50%;
 }
 
 .workflow-slide h3 {

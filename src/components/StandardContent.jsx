@@ -14,6 +14,8 @@ function Quote({ children }) {
 
 export default function StandardContent({ page, onOpenGraphic, pageName }) {
   const hasInlineGraphic = Boolean(page.inlineImage);
+  const numberedClasses = ["editorial-list", "editorial-list--numbered"];
+  if (page.numberedVariant === "cards") numberedClasses.push("editorial-list--numbered-cards");
 
   return (
     <ContentCard wide={Boolean(page.wide || hasInlineGraphic)}>
@@ -34,7 +36,7 @@ export default function StandardContent({ page, onOpenGraphic, pageName }) {
       {page.highlight && <div className="important-note"><RichText>{page.highlight}</RichText></div>}
       {page.heading && <h3>{page.heading}</h3>}
       {page.bullets && <ul className="editorial-list">{page.bullets.map((item, index) => <li key={index}><RichText>{item}</RichText></li>)}</ul>}
-      {page.numbered && <ol className="editorial-list editorial-list--numbered">{page.numbered.map((item, index) => <li key={index}><RichText>{item}</RichText></li>)}</ol>}
+      {page.numbered && <ol className={numberedClasses.join(" ")}>{page.numbered.map((item, index) => <li key={index}><RichText>{item}</RichText></li>)}</ol>}
       {page.paragraphsAfter?.map((paragraph, index) => <p key={`after-${index}`}><RichText>{paragraph}</RichText></p>)}
 
       {page.accordionItems ? (
