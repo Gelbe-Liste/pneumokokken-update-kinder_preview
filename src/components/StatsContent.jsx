@@ -9,11 +9,7 @@ function parseStatValue(value) {
 
   const rawNumber = match[1];
   const suffix = match[2] || "";
-  const decimals = rawNumber.includes(",")
-    ? rawNumber.split(",")[1].length
-    : rawNumber.includes(".")
-      ? rawNumber.split(".")[1].length
-      : 0;
+  const decimals = rawNumber.includes(",") ? rawNumber.split(",")[1].length : (rawNumber.includes(".") ? rawNumber.split(".")[1].length : 0);
   const numericValue = Number(rawNumber.replace(".", "").replace(",", "."));
 
   if (Number.isNaN(numericValue)) return null;
@@ -91,26 +87,15 @@ function StatTile({ stat }) {
   );
 }
 
-function InfoCard({ card }) {
-  return (
-    <div className="insight-card">
-      {card.heading && <h3>{card.heading}</h3>}
-      {card.paragraphs?.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-    </div>
-  );
-}
-
 export default function StatsContent({ page, onOpenGraphic }) {
   const hasInlineGraphic = Boolean(page.inlineImage);
 
   return (
     <ContentCard wide={page.wide !== false} className="stats-card">
       <p className="page-kicker">{page.kicker}</p>
-      <h2>{page.title}</h2>
+      <h2 className="mega-stat">{page.title}</h2>
       {page.subtitle && <p className="page-subtitle">{page.subtitle}</p>}
-      {page.contextLabel && <p className="section-subline">{page.contextLabel}</p>}
       {page.stats?.length > 0 && <div className="stat-grid">{page.stats.map((stat, index) => <StatTile stat={stat} key={`${stat.value}-${index}`} />)}</div>}
-      {page.infoCards?.length > 0 && <div className="insight-grid">{page.infoCards.map((card, index) => <InfoCard card={card} key={index} />)}</div>}
       {page.quote && <blockquote className="editorial-quote">{page.quote}</blockquote>}
       {page.bullets?.length > 0 && <div className="country-grid">{page.bullets.map((item,index)=><span key={index}>{item}</span>)}</div>}
 
@@ -119,7 +104,6 @@ export default function StatsContent({ page, onOpenGraphic }) {
           src={page.inlineImage}
           alt={page.inlineImageAlt || page.title}
           onOpenGraphic={onOpenGraphic}
-          className={page.inlineImageClassName || ""}
         />
       )}
 
