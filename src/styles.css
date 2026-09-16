@@ -2083,3 +2083,18 @@ button.secondary-cta {
     max-height: none !important;
   }
 }
+
+/* =========================================================
+   v0.26 – Kapitel 02 / Kapitel 08 Nachkorrekturen
+   - Kapitel 02: Grafikrahmen in der Höhe freigeben, damit die
+     16:9-Grafik ohne seitlichen Weißraum in voller Breite erscheint.
+   - Kapitel 08: Nummerierte Risikofaktor-Blöcke in Bold darstellen.
+   ========================================================= */
+#kernaussagen .inline-figure {
+  max-height: none;
+  height: auto;
+}
+
+#risikogruppen .editorial-list--numbered-cards li {
+  font-weight: 800;
+}
