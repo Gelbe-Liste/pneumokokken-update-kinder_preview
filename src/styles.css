@@ -2098,3 +2098,24 @@ button.secondary-cta {
 #risikogruppen .editorial-list--numbered-cards li {
   font-weight: 800;
 }
+
+
+/* =========================================================
+   v0.27 – Praxis-Workflow Navigation
+   Aktive Buttons: Gelb / schwarze Schrift
+   Inaktive Buttons: Hellgrau / schwarze Schrift
+   ========================================================= */
+#praxisnavigator .workflow-carousel__button {
+  background: var(--yellow, #ffdc00);
+  color: #111;
+  border-color: rgba(17, 17, 17, .16);
+  opacity: 1;
+}
+
+#praxisnavigator .workflow-carousel__button:disabled {
+  background: #f0f0ee;
+  color: #111;
+  border-color: rgba(17, 17, 17, .12);
+  opacity: 1;
+  cursor: not-allowed;
+}
