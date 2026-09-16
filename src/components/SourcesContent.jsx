@@ -21,7 +21,5 @@ export default function SourcesContent({ page, project, onPdf, pdfGenerating = f
       <button type="button" className="secondary-cta" onClick={() => onPdf("sources")} disabled={pdfGenerating} aria-busy={pdfGenerating}>{pdfGenerating ? "PDF wird erstellt ..." : (page.pdfCtaLabel || "Inhalte als PDF erstellen")}</button>
     </div>
     <ol className="sources-list">{project.sources.map((source, index) => <li key={`${source.text}-${index}`}>{source.url ? <a href={source.url} target="_blank" rel="noreferrer" onClick={() => outbound(`Quelle ${index + 1}`, source.url, source.analyticsId || `source-${index + 1}`, "source_link")}>{source.text}</a> : source.text}</li>)}</ol>
-    {project.pendingSources?.length > 0 && <div className="pending-sources"><h3>{page.pendingHeading || "Noch zu ergänzen"}</h3><ul className="editorial-list">{project.pendingSources.map((item) => <li key={item}>{item}</li>)}</ul></div>}
-    {page.note && <div className="important-note important-note--soft">{page.note}</div>}
   </ContentCard>;
 }

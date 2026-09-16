@@ -59,3 +59,13 @@ Im gelieferten Projektstand ist `VITE_PIANO_ENABLED=false`. Erst nach Data-Model
 - CME-/externe CTA: `click.action` + `destination_path`
 - Navigation/Menü: `click.action` bzw. `pop_in.display`
 - Video: `video.start`, `video.progress`, `video.complete`
+
+## v0.11 – zusätzliche Interaktionen
+
+### Praxis-FAQ / Praxis-Fälle
+- Event: `accordion.toggle`
+- Relevante Properties: `chapter_id`, `accordion_id`, `accordion_title`, `accordion_group`, `interaction_state`, `trigger_source`
+
+### Praxis-Workflow
+- Event: `workflow.slide`
+- Relevante Properties: `chapter_id`, `slide_index`, `slide_total`, `slide_title`, `trigger_source`

@@ -27,12 +27,12 @@ function PageContent({ page, onOpenGraphic, onPdf, pdfGenerating }) {
   switch (page.kind) {
     case "hero": return <HeroContent page={page} />;
     case "stats": return <StatsContent page={page} onOpenGraphic={graphicHandler} />;
-    case "steps": return <StepsContent page={page} onOpenGraphic={graphicHandler} />;
+    case "steps": return <StepsContent page={page} onOpenGraphic={graphicHandler} pageName={project.meta.analytics.page} />;
     case "sources": return <SourcesContent page={page} project={project} onPdf={onPdf} pdfGenerating={pdfGenerating} />;
     case "video": return <VideoContent page={page} project={project} />;
     case "imprint": return <ImprintContent page={page} imprint={project.imprint} />;
     case "cta": return <CtaContent page={page} project={project} onOpenGraphic={graphicHandler} />;
-    default: return <StandardContent page={page} onOpenGraphic={graphicHandler} />;
+    default: return <StandardContent page={page} onOpenGraphic={graphicHandler} pageName={project.meta.analytics.page} />;
   }
 }
 

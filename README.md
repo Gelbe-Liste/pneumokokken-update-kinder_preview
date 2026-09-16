@@ -6,8 +6,8 @@ Arbeitsprojekt für das Scrollytelling **„Pneumokokken-Impfung bei Kindern“*
 
 - Arbeitstitel / Repository-Name: `pneumokokken-update-kinder`
 - Basis: med.i.scroll Mastertemplate v2
-- Content-Stand: 08.09.2026 · v0.8 nach konsolidierter Pfizer-/MSD-Korrekturfassung v0.7_Korr
-- 14 Scroll-Kapitel inkl. Quellen, Impressum und finalem CME-CTA
+- Content-Stand: 14.09.2026 · v0.9
+- 14 Scroll-Kapitel inkl. Quellen, Impressum, Sponsortransparenz und CME-CTA
 - echte clientseitige PDF-Erstellung über jsPDF
 - mobile Navigation, Kapitelmenü, Fortschrittsanzeige und Grafik-Lightbox aus v2 übernommen
 - Piano Analytics auf den Stand des med.i.scroll-Mastertemplates v5 (08.09.2026) aktualisiert
@@ -16,32 +16,33 @@ Arbeitsprojekt für das Scrollytelling **„Pneumokokken-Impfung bei Kindern“*
 
 ## Inhaltsdramaturgie
 
-1. Einstieg: Versorgungslücke / zeitgerechter Schutz
+1. Einstieg
 2. Kernaussagen
-3. Pneumokokken verstehen: Reservoir + Disease Burden
+3. Pneumokokken verstehen
 4. Serotypen im Wandel
-5. Impfstoffkonzepte & Evidenz
-6. Standardimpfung im Säuglingsalter
-7. Praxis-FAQ
-8. Risikokinder / individuelles Risiko
-9. STIKO 2026: Übergang ab zwei Jahren
-10. Praxis-Workflow
+5. Valenz & Evidenz
+6. Standardimpfung
+7. Praxis-FAQ / Impfserie
+8. Risikogruppen
+9. STIKO 2026 / PCV20-Indikationsimpfung
+10. Praxisnavigator
 11. Praxisfälle
-12. CME-Vertiefung / finaler CTA
+12. CME-Vertiefung / CTA
 13. Literatur & Download
 14. Impressum
 
-Die redaktionelle Story folgt der konsolidierten Pfizer-/MSD-Logik:
+Die redaktionelle Story folgt der vereinbarten Logik:
 
-**Versorgungslücke → Disease Burden → dynamische Epidemiologie → Standardimpfung → Risikokinder → konkrete Versorgungsschritte → Praxisfälle → CME-Vertiefung**
+**Relevanz → medizinisches Verständnis → Serotypen/Evidenz → Standardimpfung (PCV13/PCV15) → Risikostratifizierung → Indikationsimpfung (PCV20) → Praxis → CME-Vertiefung**
 
 ## Wichtige Dateien
 
 - `src/project.js` – alle Projektdaten, Texte, Kapitel, Quellen, CTA und Medienpfade
 - `public/assets/images/` – Arbeitsgrafiken
 - `public/assets/backgrounds/` – abgeleitete Hintergrundflächen für die v2-Vollbilddramaturgie
-- `UPDATE-2026-09-08-v0.8.md` – dokumentiert die Umsetzung der Korrekturfassung v0.7_Korr
+- `docs/med-i-scroll_Pneumokokken_Inhaltskonzept_Abstimmung_2026-08-28.docx` – inhaltliche Arbeitsgrundlage
 - `docs/ASSET-MAPPING-PNEUMOKOKKEN.md` – ursprüngliches Asset-Mapping
+- `docs/CONTENT-CLEARANCE-PFIZER-v0.9.md` – redaktionelle Einordnung der am 11.09.2026 angelieferten Pfizer-Daten
 - `PROJECT-STATUS.md` – offene Punkte bis zur nächsten Version
 
 ## Lokal starten
@@ -72,9 +73,10 @@ Das Projekt kann in ein eigenes GitHub-Repository mit dem Arbeitstitel `pneumoko
 2. Verbindliche CME-Punkte erst nach Zertifizierung ausspielen; bis dahin „geplant 2–3 CME-Punkte*“.
 3. Medizinische Angaben, STIKO-Abstände und Serotypendaten gegen die zum Go-live aktuelle Primärquelle prüfen.
 4. Referentennamen erst nach verbindlicher Zusage im CTA ergänzen.
-5. Sponsor-/Compliance-Review der neutralen PCV13/PCV15/PCV20-Einordnung.
-6. Neue Piano Custom Properties/Events im Data Model validieren und nach interner Freigabe `VITE_PIANO_ENABLED=true` im produktiven Vercel-Projekt setzen.
-7. Finale Bild-/Grafiknachweise ergänzen.
+5. Sponsor-/Compliance-Review der neutralen PCV13/PCV15/PCV20-Einordnung sowie finale Sponsorennennung/Logos.
+6. Nutzungsfreigabe für Referenzlabor-Daten/Visuals von van der Linden klären.
+7. Neue Piano Custom Properties/Events im Data Model validieren und nach interner Freigabe `VITE_PIANO_ENABLED=true` im produktiven Vercel-Projekt setzen.
+8. Finale Bild-/Grafiknachweise ergänzen.
 
 
 ## Piano Analytics – Migration 08.09.2026

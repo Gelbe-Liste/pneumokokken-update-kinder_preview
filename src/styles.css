@@ -174,7 +174,7 @@ h1, h2, h3, p { text-wrap: pretty; }
 .stat-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 24px 0; }
 .stat-tile { padding: 18px; background: rgba(255,220,0,.94); color: #111; }
 .stat-tile strong { display: block; font-size: clamp(2rem,4.2vw,3.8rem); line-height: .9; letter-spacing: -.05em; }
-.stat-tile span { display: block; margin-top: 9px; font-weight: 700; font-size: .84rem; line-height: 1.25; }
+.stat-tile span { display: block; margin-top: 9px; font-weight: 700; font-size: .96rem; line-height: 1.3; }
 .country-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; margin: 18px 0; }
 .country-grid span { padding: 8px 10px; border-bottom: 1px solid currentColor; font-weight: 800; font-size: .9rem; }
 .inline-figure { width: 100%; max-height: 270px; object-fit: contain; background: white; margin-top: 16px; border: 1px solid rgba(0,0,0,.12); }
@@ -183,7 +183,7 @@ h1, h2, h3, p { text-wrap: pretty; }
 .editorial-list li { margin: 9px 0; padding-left: 4px; font-size: clamp(.96rem,1.25vw,1.08rem); line-height: 1.45; }
 .editorial-list--numbered { padding-left: 1.6rem; }
 .editorial-list--numbered li::marker { font-weight: 900; color: var(--yellow); }
-.story-page--light .editorial-list--numbered li::marker { color: #8a7300; }
+.story-page--light .editorial-list--numbered li::marker { color: var(--yellow); text-shadow: 0 0 0 #111; }
 .editorial-quote { margin: 25px 0 0; padding: 16px 20px; border-left: 4px solid var(--yellow); background: rgba(255,255,255,.08); font-size: clamp(1rem,1.35vw,1.15rem); font-weight: 700; line-height: 1.45; }
 .story-page--light .editorial-quote { background: rgba(17,17,17,.055); }
 .text-block + .text-block { margin-top: 21px; padding-top: 4px; border-top: 1px solid currentColor; border-color: rgba(128,128,128,.28); }
@@ -258,7 +258,7 @@ h1, h2, h3, p { text-wrap: pretty; }
   .content-card h1 { font-size: clamp(3rem,15vw,5.2rem); }
   .content-card h2 { font-size: clamp(2rem,10vw,3.3rem); }
   .mega-stat { font-size: clamp(2.8rem,14vw,4.8rem) !important; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: 1fr; }
   .country-grid { grid-template-columns: 1fr; }
   .menu-overlay__nav { grid-template-columns: 1fr; }
   .step { grid-template-columns: 36px 1fr; gap: 12px; }
@@ -1654,115 +1654,402 @@ button.secondary-cta {
 }
 
 
-/* ==========================================================================\n   v0.8 Pfizer/MSD-Konsolidierung: freundlicher, heller, mobil priorisiert\n   ========================================================================== */
-:root {
-  --panel-light: rgba(255, 255, 255, 0.965);
-  --border-light: rgba(18, 54, 62, .13);
-  --friendly-teal: #0d5f66;
-  --friendly-mint: #e4f3ef;
-  --friendly-sky: #e8f2f9;
-  --friendly-coral: #dc5858;
-}
-
-html, body { background: #f4f7f6; }
-.story-page--light .story-page__scrim {
-  background: linear-gradient(90deg, rgba(247,250,248,.68), rgba(255,255,255,.18));
-}
-.story-page--light .content-card {
-  box-shadow: 0 24px 68px rgba(21, 63, 68, .14);
-  border-color: rgba(13,95,102,.13);
-}
-.story-page--light .page-kicker { color: var(--friendly-teal) !important; }
-.story-page--light .editorial-quote {
-  background: rgba(228,243,239,.74);
-  border-left-color: var(--yellow);
-}
-.story-page--light .editorial-list--numbered li::marker { color: var(--friendly-teal); }
-.important-note--soft {
-  background: #fff7d5;
-  border: 1px solid rgba(225, 190, 0, .42);
-  font-weight: 600;
-}
-
-.faq-grid {
-  margin-top: 26px;
+/* =========================================================
+   v0.11 – Praxis-FAQ / Praxis-Fälle accordions
+   ========================================================= */
+.accordion-group {
+  margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
-.faq-item {
-  background: rgba(255,255,255,.88);
-  border: 1px solid rgba(13,95,102,.14);
-  border-radius: var(--radius-small, 10px);
+
+.accordion {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(128, 128, 128, .24);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, .08);
+  padding: 18px 18px 16px;
   overflow: hidden;
 }
-.faq-item summary {
-  list-style: none;
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 10px;
-  align-items: center;
-  padding: 15px 16px;
-  font-weight: 850;
-  line-height: 1.28;
+
+.story-page--light .accordion {
+  background: rgba(17, 17, 17, .035);
 }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item__number {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+
+.accordion__heading {
+  margin: 0 0 10px !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.accordion__teaser p {
+  margin: 0 0 10px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.accordion__toggle {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 50px;
+  margin-top: 6px;
+  padding: 12px 15px;
+  border: 1px solid rgba(128, 128, 128, .28);
+  border-radius: var(--radius-control);
+  background: var(--yellow);
+  color: #111;
+  font-weight: 900;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion__icon {
+  flex: 0 0 auto;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.accordion__body {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(128, 128, 128, .24);
+}
+
+.accordion__body.is-open {
+  display: block;
+}
+
+.accordion__body p {
+  margin: 0 0 12px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   v0.11 – Praxis-Workflow slider / swipe cards
+   ========================================================= */
+.workflow-carousel {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.workflow-carousel__hint {
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0 0;
+  padding: 0 8px;
+  font-size: .84rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  opacity: .82;
+}
+
+.workflow-carousel__viewport {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, .22);
+  border-radius: var(--radius-card);
+  background: rgba(255,255,255,.08);
+  touch-action: pan-y;
+}
+
+.story-page--light .workflow-carousel__viewport {
+  background: rgba(17,17,17,.035);
+}
+
+.workflow-carousel__track {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  transition: transform .24s ease;
+  will-change: transform;
+}
+
+.workflow-slide {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 0 100%;
+  padding: 22px 22px 18px;
+}
+
+.workflow-slide > * {
+  max-width: 100%;
+}
+
+.workflow-slide h3,
+.workflow-slide p,
+.workflow-slide li {
+  overflow-wrap: anywhere;
+}
+
+.workflow-slide__meta {
+  font-size: .82rem;
+  font-weight: 800;
+  opacity: .75;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.workflow-slide__number {
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
+  margin-top: 14px;
   background: var(--yellow);
   color: #111;
-  font-size: .82rem;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.workflow-slide h3 {
+  margin: 16px 0 8px;
+}
+
+.workflow-carousel__controls {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.workflow-carousel__status {
+  min-width: 58px;
+  text-align: center;
   font-weight: 900;
 }
-.faq-item[open] summary { background: rgba(228,243,239,.7); }
-.faq-item p { margin: 0; padding: 0 16px 16px 60px; font-size: .98rem !important; }
 
-.best-practice-box,
-.pending-sources {
-  margin-top: 24px;
-  padding: 18px 20px;
-  background: rgba(228,243,239,.82);
-  border: 1px solid rgba(13,95,102,.15);
-  border-radius: var(--radius-small, 10px);
-}
-.best-practice-box strong { color: var(--friendly-teal); text-transform: uppercase; letter-spacing: .06em; font-size: .82rem; }
-.best-practice-box p { margin: 8px 0 0; }
-.pending-sources h3 { margin-top: 0; color: var(--friendly-teal); }
-
-/* FAQ/Workflow chapters carry more copy: keep mobile interaction compact. */
-@media (max-width: 720px) {
-  .faq-grid { grid-template-columns: 1fr; }
-  .faq-item summary { padding: 13px 14px; }
-  .faq-item p { padding: 0 14px 14px 54px; }
-  .story-page--light .story-page__scrim { background: rgba(248,250,249,.42); }
-  .inline-figure--chapter { max-height: min(44vh, 330px); }
+.workflow-carousel__button {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid rgba(128, 128, 128, .28);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: inherit;
+  font-weight: 900;
+  cursor: pointer;
 }
 
-/* Heller Seitenlook braucht einen konstant kontrastreichen Marken-Header. */
-.topbar,
-.topbar--scrolled {
-  background: rgba(12,12,12,.94);
-  box-shadow: 0 8px 30px rgba(0,0,0,.16);
-  backdrop-filter: blur(16px);
+.workflow-carousel__button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
 }
-.topbar__title { text-shadow: none; }
-.story-page--light .step { border-top-color: rgba(13,95,102,.18); }
-.stats-card .mega-stat { max-width: 13ch; }
-.cme-badges span {
-  background: var(--friendly-mint);
-  color: #163238;
-  border: 1px solid rgba(13,95,102,.14);
+
+.workflow-carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
 }
-.cme-badges span:nth-child(2) {
+
+.workflow-carousel__dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(128, 128, 128, .38);
+  cursor: pointer;
+}
+
+.workflow-carousel__dot.is-active {
   background: var(--yellow);
-  color: #111;
-  border-color: rgba(160,130,0,.22);
 }
+
+.imprint-brand-heading {
+  margin: 0 0 6px;
+  font-size: .8rem !important;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
 @media (max-width: 640px) {
-  .stats-card .mega-stat { max-width: 100%; }
+  .accordion {
+    border-radius: 16px;
+    padding: 16px 15px 14px;
+  }
+
+  .accordion__toggle {
+    padding: 11px 13px;
+    border-radius: 12px;
+    font-size: .95rem;
+  }
+
+  .workflow-carousel__hint {
+    font-size: .8rem;
+  }
+
+  .workflow-carousel__viewport {
+    border-radius: 16px;
+  }
+
+  .workflow-slide {
+    padding: 18px 16px 14px;
+  }
+
+  .workflow-slide__meta {
+    font-size: .75rem;
+  }
+
+  .workflow-slide__number {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+
+  .workflow-slide h3 {
+    font-size: 1.12rem;
+    line-height: 1.2;
+  }
+
+  .workflow-carousel__controls {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .workflow-carousel__button {
+    padding: 11px 12px;
+    font-size: .92rem;
+  }
+
+  .workflow-carousel__status {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+}
+
+@media print {
+  .accordion__body {
+    display: block !important;
+    border-top: 0 !important;
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+  }
+
+  .accordion__toggle,
+  .workflow-carousel__hint,
+  .workflow-carousel__controls,
+  .workflow-carousel__dots {
+    display: none !important;
+  }
+
+  .workflow-carousel__viewport {
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .workflow-carousel__track {
+    display: block !important;
+    transform: none !important;
+  }
+
+  .workflow-slide {
+    width: 100% !important;
+    padding: 12px 0 !important;
+    border-top: 1px solid rgba(0,0,0,.12);
+    break-inside: avoid;
+  }
+}
+
+/* =========================================================
+   v0.14 – Praxis-Workflow: hard mobile width containment
+   Fixes intrinsic-width expansion caused by the 1600px inline
+   workflow graphic/button inside the flex-based chapter layout.
+   ========================================================= */
+#praxisnavigator .story-page__inner,
+#praxisnavigator .content-card,
+#praxisnavigator .inline-graphic-block,
+#praxisnavigator .inline-graphic-trigger,
+#praxisnavigator .workflow-carousel,
+#praxisnavigator .workflow-carousel__viewport,
+#praxisnavigator .workflow-carousel__track,
+#praxisnavigator .workflow-slide {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#praxisnavigator .content-card {
+  overflow: hidden;
+}
+
+#praxisnavigator .inline-graphic-block,
+#praxisnavigator .inline-graphic-trigger {
+  width: 100%;
+}
+
+#praxisnavigator .inline-graphic-trigger .inline-figure,
+#praxisnavigator .inline-figure--chapter {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  #praxisnavigator .story-page__inner {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    min-width: 0;
+  }
+
+  #praxisnavigator .content-card,
+  #praxisnavigator .content-card--wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #praxisnavigator .content-card > *,
+  #praxisnavigator h2,
+  #praxisnavigator .page-subtitle {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #praxisnavigator h2 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #praxisnavigator .inline-graphic-block {
+    overflow: hidden;
+  }
+
+  #praxisnavigator .inline-graphic-trigger {
+    overflow: hidden;
+    min-inline-size: 0;
+  }
+
+  #praxisnavigator .inline-graphic-trigger .inline-figure,
+  #praxisnavigator .inline-figure--chapter {
+    aspect-ratio: auto !important;
+    max-height: none !important;
+  }
 }
