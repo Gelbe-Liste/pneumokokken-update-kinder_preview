@@ -18,6 +18,8 @@
  * v0.19: PDF-Layout-Fix für CME-Hinweis und saubere, blockweise Quellen-Paginierung.
  * v0.21: Austausch der Grafikbasis auf die feinbearbeitete Look-&-Feel-Version; gewünschte Anpassungen
  *        in den Grafiken 02, 04, 05, 08 und 10 auf Basis des aktualisierten Grafik-Pakets umgesetzt.
+ * v0.23: Korrekturpaket Kapitel 02/08 inkl. neuer Kachelstruktur, bereinigter Unterzeile,
+ *        angepasstem Grafikrahmen sowie Austausch der aktualisierten PNG-Grafiken 02, 04, 05, 08 und 10.
  * v0.22: Nachkorrekturen umgesetzt: aktualisierte Einstiegs- und Kernaussagen-Texte,
  *        animierte Kennzahlen, hervorgehobene Versorgungslücke, Risikogruppen-Karten,
  *        bereinigter STIKO-Hinweis, runde Workflow-Ziffern sowie Grafik-Update 02/04.
@@ -45,7 +47,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.22",
+    contentVersion: "v0.23",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -167,10 +169,12 @@ export const project = {
       nav: "Kernaussagen",
       kicker: "Kernaussagen in 60 Sekunden",
       title: "Vollständige und frühzeitige Immunisierung bleibt zentrales Versorgungsthema",
-      subtitle: "Impfquoten, Risikoprofil und Krankheitslast gemeinsam in die Versorgung einordnen.",
+      subtitle: "Eine vollständige und möglichst frühzeitige Immunisierung bleibt ein zentrales Versorgungsziel. [6,7]",
+      contextLabel: "Zur medizinischen Einordnung",
       background: "/assets/backgrounds/02_keyfacts_pneumokokken-bg.jpg",
       inlineImage: "/assets/images/02_keyfacts_ipd.png",
-      inlineImageAlt: "Arbeitsgrafik zu Versorgungslücken, frühestmöglicher Immunisierung und medizinischer Einordnung invasiver Pneumokokken-Erkrankungen bei Kindern",
+      inlineImageAlt: "Arbeitsgrafik zu Versorgungslücken, frühzeitiger Immunisierung und medizinischer Einordnung invasiver Pneumokokken-Erkrankungen bei Kindern",
+      inlineImageClassName: "inline-figure--keyfacts",
       focal: "right center",
       tone: "light",
       align: "left",
@@ -178,17 +182,28 @@ export const project = {
       wide: true,
       long: true,
       zoomable: true,
-      stats: [
-        { value: "73 %", label: "der Kinder waren 2024 im Alter von 24 Monaten vollständig gegen Pneumokokken geimpft [6]" },
-        { value: "52,5 %", label: "der Frühgeborenen der Geburtskohorte 2020 hatten bis 24 Monate eine vollständige PCV-Impfserie erhalten [7]" }
-      ],
-      quote: "Eine vollständige und möglichst frühzeitige Immunisierung bleibt ein zentrales Versorgungsziel. [6,7]",
-      bullets: [
-        "Zur medizinischen Einordnung: 685 gemeldete Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025 [1]",
-        "18 Todesfälle im genannten Meldezeitraum [1]",
-        "Pneumokokken-Pneumonien sind in diesen IPD-Zahlen nicht erfasst. Krankenhausdiagnosedaten bilden die tatsächliche Krankheitslast nur unvollständig ab. [4]",
-        "Kinder mit definierten Risikofaktoren tragen ein deutlich erhöhtes Risiko für invasive Pneumokokken-Erkrankungen. [1]",
-        "Impfstatus, Risikoprofil und nächster fälliger Impftermin gemeinsam prüfen."
+      infoCards: [
+        {
+          paragraphs: [
+            "685 gemeldete Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025 [1]",
+            "18 Todesfälle im genannten Meldezeitraum [1]"
+          ]
+        },
+        {
+          paragraphs: [
+            "Pneumokokken-Pneumonien sind in diesen IPD-Zahlen nicht erfasst. Krankenhausdiagnosedaten bilden die tatsächliche Krankheitslast nur unvollständig ab. [4]"
+          ]
+        },
+        {
+          paragraphs: [
+            "Kinder mit definierten Risikofaktoren tragen ein deutlich erhöhtes Risiko für invasive Pneumokokken-Erkrankungen. [1]"
+          ]
+        },
+        {
+          paragraphs: [
+            "Impfstatus, Risikoprofil und nächster fälliger Impftermin gemeinsam prüfen."
+          ]
+        }
       ]
     },
     {
@@ -360,9 +375,9 @@ export const project = {
       ],
       numberedVariant: "cards",
       numbered: [
-        "Angeborene oder erworbene Immundefekte beziehungsweise Immunsuppression.",
-        "Sonstige chronische Krankheiten mit erhöhter Gefährdung für Pneumokokken-Infektionen.",
-        "Anatomische oder fremdkörperassoziierte Risiken für eine Pneumokokken-Meningitis."
+        "Angeborene oder erworbene Immundefekte beziehungsweise Immunsuppression",
+        "Sonstige chronische Krankheiten mit erhöhter Gefährdung für Pneumokokken-Infektionen",
+        "Anatomische oder fremdkörperassoziierte Risiken für eine Pneumokokken-Meningitis"
       ],
       paragraphsAfter: [
         "Eine Immunsuppression kann durch die Erkrankung selbst oder durch eine immunsuppressive Therapie bedingt sein. Bei geplanten Interventionen wie Splenektomie oder Cochlea-Implantation soll die Impfung möglichst vor der Intervention erfolgen. Asthma bronchiale ist in der STIKO als Beispiel einer chronischen Erkrankung der Atmungsorgane mit erhöhter gesundheitlicher Gefährdung aufgeführt. [1,2]",
