@@ -20,6 +20,8 @@
  *        in den Grafiken 02, 04, 05, 08 und 10 auf Basis des aktualisierten Grafik-Pakets umgesetzt.
  * v0.24: Kapitel 02 vollständig auf die bestehende Visualisierung aus v0.22 zurückgesetzt;
  *        keine strukturellen/visuellen Änderungen an Kacheln oder Grafikrahmen.
+ * v0.25: Textkorrektur Kapitel 02: Todesfälle in erste Einordnungs-Kachel integriert;
+ *        Bullet-Struktur auf vier bestehende Textblöcke reduziert.
  * v0.23: Korrekturpaket Kapitel 02/08 inkl. neuer Kachelstruktur, bereinigter Unterzeile,
  *        angepasstem Grafikrahmen sowie Austausch der aktualisierten PNG-Grafiken 02, 04, 05, 08 und 10.
  * v0.22: Nachkorrekturen umgesetzt: aktualisierte Einstiegs- und Kernaussagen-Texte,
@@ -49,7 +51,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.24",
+    contentVersion: "v0.25",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -188,8 +190,7 @@ export const project = {
       ],
       quote: "Eine vollständige und möglichst frühzeitige Immunisierung bleibt ein zentrales Versorgungsziel. [6,7]",
       bullets: [
-        "Zur medizinischen Einordnung: 685 gemeldete Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025 [1]",
-        "18 Todesfälle im genannten Meldezeitraum [1]",
+        "Zur medizinischen Einordnung: 685 gemeldete Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025; davon 18 Todesfälle im genannten Meldezeitraum [1]",
         "Pneumokokken-Pneumonien sind in diesen IPD-Zahlen nicht erfasst. Krankenhausdiagnosedaten bilden die tatsächliche Krankheitslast nur unvollständig ab. [4]",
         "Kinder mit definierten Risikofaktoren tragen ein deutlich erhöhtes Risiko für invasive Pneumokokken-Erkrankungen. [1]",
         "Impfstatus, Risikoprofil und nächster fälliger Impftermin gemeinsam prüfen."
