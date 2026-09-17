@@ -2119,3 +2119,21 @@ button.secondary-cta {
   opacity: 1;
   cursor: not-allowed;
 }
+
+/* =========================================================
+   v0.28 – Praxis-FAQ / Praxis-Fälle Antwortbereiche
+   Aufgeklappte Antworten: Hellgelb mit schwarzer Schrift.
+   ========================================================= */
+.accordion-group--faq .accordion__body,
+.accordion-group--cases .accordion__body {
+  background: #fff4b8;
+  color: #111;
+  border-top: 0;
+  border-radius: var(--radius-control, 12px);
+  padding: 16px 18px 6px;
+}
+
+.accordion-group--faq .accordion__body p,
+.accordion-group--cases .accordion__body p {
+  color: #111;
+}
