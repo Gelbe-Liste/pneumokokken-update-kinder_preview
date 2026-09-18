@@ -206,23 +206,23 @@ export const project = {
       number: "03",
       nav: "Pneumokokken verstehen",
       kicker: "Pneumokokken verstehen",
-      title: "Besiedelung ist häufig – invasive Erkrankung selten, aber potenziell schwer",
-      subtitle: "Warum Kinder für Transmission und Prävention eine zentrale Rolle spielen.",
+      title: "Besiedelung ist häufig – Erkrankung seltener, invasive Verläufe potenziell schwer",
+      subtitle: "Warum Kinder für Transmission, Erkrankungsspektrum und Prävention eine zentrale Rolle spielen.",
       background: "/assets/backgrounds/03_besiedelung_pneumokokken-bg.jpg",
       focal: "left center",
       inlineImage: "/assets/images/03_reservoir_transmission.png",
-      inlineImageAlt: "Arbeitsgrafik zu Besiedelung, Transmission sowie unterschiedlicher Häufigkeit und Schwere klinischer Pneumokokken-Erkrankungen",
+      inlineImageAlt: "Arbeitsgrafik zu Reservoir, asymptomatischer Besiedelung und dem Krankheitsspektrum von Otitis media bis zu invasiven Pneumokokken-Erkrankungen",
       tone: "dark",
       align: "right",
       kind: "standard",
       long: true,
       zoomable: true,
       paragraphs: [
-        "Streptococcus pneumoniae kann den oberen Respirationstrakt asymptomatisch besiedeln. Kinder unter 5 Jahren sind das wichtigste Reservoir; durchschnittlich sind 40–60 % dieser Altersgruppe kolonisiert. Damit spielen Kinder eine zentrale Rolle bei der Transmission. [1]",
-        "Aus der Kolonisation können unter anderem Pneumonien sowie invasive Erkrankungen wie Sepsis und Meningitis entstehen. In Krankenhausdiagnosedaten für Kinder <5 Jahren entfielen 2012–2019 62 % der erfassten pneumokokkenbedingten Hospitalisierungen auf Pneumonien; zugleich bilden diese Daten die Gesamtfallzahl nur unvollständig ab. [4]",
-        "Säuglinge und Kleinkinder sowie Kinder mit definierten Risikofaktoren sind für invasive Pneumokokken-Erkrankungen besonders relevant. Präventionsentscheidungen orientieren sich daher an Alter, Impfstatus und individuellem Risikoprofil. [1,2]"
+        "Streptococcus pneumoniae kann den oberen Respirationstrakt asymptomatisch besiedeln. Kinder unter 5 Jahren sind das wichtigste Reservoir; 40–60 % dieser Altersgruppe sind kolonisiert und tragen damit wesentlich zur Transmission bei. [1]",
+        "Das klinische Spektrum reicht von häufigen nichtinvasiven Erkrankungen wie akuter Otitis media und Pneumonie bis zu selteneren, aber potenziell besonders schweren invasiven Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) wie Bakteriämie/Sepsis und Meningitis. [1]",
+        "Pneumokokken-Pneumonien sind in IPD-Zahlen nicht erfasst; zugleich ist die tatsächliche Krankheitslast nur unvollständig abbildbar. Präventionsentscheidungen orientieren sich daher an Alter, Impfstatus und individuellem Risikoprofil. [1,2,4]"
       ],
-      quote: "Alter, Impfstatus und Risikoprofil sind zentrale Determinanten der Pneumokokken-Impfstrategie. [1,2]"
+      quote: "Von der asymptomatischen Besiedelung bis zur invasiven Erkrankung reicht ein breites klinisches Spektrum – entscheidend sind Prävention und Risikoorientierung. [1,2,4]"
     },
     {
       id: "serotypen-im-wandel",
