@@ -24,6 +24,7 @@
  *        Bullet-Struktur auf vier bestehende Textblöcke reduziert.
  * v0.23: Korrekturpaket Kapitel 02/08 inkl. neuer Kachelstruktur, bereinigter Unterzeile,
  *        angepasstem Grafikrahmen sowie Austausch der aktualisierten PNG-Grafiken 02, 04, 05, 08 und 10.
+ * v0.29: Animierte Kennzahlen im Kapitel Kernaussagen starten bei jedem erneuten Sichtbarwerden auf dem Screen erneut bei 0 und zählen bis zum Zielwert hoch.
  * v0.28: Praxis-FAQ und Praxis-Fälle: aufgeklappte Antworten mit hellgelbem Hintergrund
  *        und schwarzer Schrift zur klareren visuellen Abgrenzung.
  * v0.27: Praxis-Workflow Navigation angepasst: aktive Zurück-/Weiter-Buttons gelb,
@@ -55,7 +56,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.28",
+    contentVersion: "v0.29",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
