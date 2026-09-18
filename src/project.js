@@ -56,7 +56,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.29",
+    contentVersion: "v0.32",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -219,7 +219,7 @@ export const project = {
       zoomable: true,
       paragraphs: [
         "Streptococcus pneumoniae kann den oberen Respirationstrakt asymptomatisch besiedeln. Kinder unter 5 Jahren sind das wichtigste Reservoir; 40–60 % dieser Altersgruppe sind kolonisiert und tragen damit wesentlich zur Transmission bei. [1]",
-        "Das klinische Spektrum reicht von häufigen nichtinvasiven Erkrankungen wie akuter Otitis media und Pneumonie bis zu selteneren, aber potenziell besonders schweren invasiven Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) wie Bakteriämie/Sepsis und Meningitis. [1]",
+        "Das klinische Spektrum reicht von häufigeren Manifestationen wie akuter Otitis media und Pneumonie bis zu selteneren, aber potenziell besonders schweren invasiven Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) wie Bakteriämie/Sepsis und Meningitis. [1,4]",
         "Pneumokokken-Pneumonien sind in IPD-Zahlen nicht erfasst; zugleich ist die tatsächliche Krankheitslast nur unvollständig abbildbar. Präventionsentscheidungen orientieren sich daher an Alter, Impfstatus und individuellem Risikoprofil. [1,2,4]"
       ],
       quote: "Von der asymptomatischen Besiedelung bis zur invasiven Erkrankung reicht ein breites klinisches Spektrum – entscheidend sind Prävention und Risikoorientierung. [1,2,4]"
